@@ -433,7 +433,7 @@ with st.sidebar:
     st.markdown("---")
     st.markdown(
         '<span style="font-size:0.7rem;color:#8B949E">'
-        'Supervisor: Zuhra Abdiakhmetova<br>KBTU · 2025</span>',
+        'Supervisor: Zuhra Abdiakhmetova<br>KBTU · 2026</span>',
         unsafe_allow_html=True
     )
 
