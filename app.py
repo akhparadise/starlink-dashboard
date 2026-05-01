@@ -416,7 +416,7 @@ def xai_bar_chart(contributions: dict, incident_status: str) -> go.Figure:
     feats = list(contributions.keys())
     vals  = list(contributions.values())
     color = STATUS_COLORS.get(incident_status, "#58A6FF")
- 
+
     fig = go.Figure(go.Bar(
         x=vals, y=feats, orientation="h",
         marker=dict(
@@ -427,12 +427,14 @@ def xai_bar_chart(contributions: dict, incident_status: str) -> go.Figure:
         textposition="outside",
         textfont=dict(color="#CDD9E5", size=10)
     ))
+    # ── сначала применяем шаблон, потом переопределяем нужные ключи ──
+    fig.update_layout(**PLOTLY_TEMPLATE)
     fig.update_layout(
         title=dict(text="Feature Attribution (XAI)", font=dict(size=12, color="#E6EDF3")),
-        xaxis=dict(title="Relative Contribution", tickformat=".0%"),
+        xaxis_title="Relative Contribution",
+        xaxis_tickformat=".0%",
         height=320,
         margin=dict(l=160, r=60, t=40, b=30),
-        **PLOTLY_TEMPLATE
     )
     return fig
  
