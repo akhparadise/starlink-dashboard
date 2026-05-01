@@ -396,9 +396,9 @@ st.markdown("""
 <div class="header-band">
   <span class="system-title">⬡ NADS &nbsp;|&nbsp; Network Attack Detection System</span><br>
   <span class="system-subtitle">
-    KBTU Master's Thesis &nbsp;·&nbsp;
+    by Saifolla Aknur &nbsp;·&nbsp;
     Starlink Telemetry Analytics &nbsp;·&nbsp;
-    ML-Powered Threat Classification
+   
   </span>
 </div>
 """, unsafe_allow_html=True)
