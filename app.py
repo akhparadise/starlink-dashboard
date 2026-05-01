@@ -708,8 +708,13 @@ with tab_forensic:
                                   mode="lines+markers", name="Latency",
                                   line=dict(color="#E3B341", width=1.5)), row=2, col=1)
     # Mark incident
-    fig_ctx.add_vline(x=t0, line_color="#F85149", line_dash="dash",
-                      annotation_text="INCIDENT", annotation_font_color="#F85149")
+    fig_ctx.add_vline(
+    x=t0.isoformat(),
+    line_color="#F85149",
+    line_dash="dash",
+    annotation_text="INCIDENT",
+    annotation_font_color="#F85149"
+)
     fig_ctx.update_layout(height=320, showlegend=False, **PLOTLY_TEMPLATE)
     st.plotly_chart(fig_ctx, use_container_width=True)
  
