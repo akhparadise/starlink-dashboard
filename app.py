@@ -427,13 +427,20 @@ def xai_bar_chart(contributions: dict, incident_status: str) -> go.Figure:
         textposition="outside",
         textfont=dict(color="#CDD9E5", size=10)
     ))
+
+    # 1. Сначала применяем общий шаблон
+    fig.update_layout(**PLOTLY_TEMPLATE)
+    
+    # 2. Затем добавляем специфичные для этого графика настройки
     fig.update_layout(
         title=dict(text="Feature Attribution (XAI)", font=dict(size=12, color="#E6EDF3")),
-        xaxis=dict(title="Relative Contribution", tickformat=".0%"),
         height=320,
         margin=dict(l=160, r=60, t=40, b=30),
-        **PLOTLY_TEMPLATE
     )
+    
+    # 3. Настраиваем ось отдельно, чтобы не было конфликта с шаблоном
+    fig.update_xaxes(title="Relative Contribution", tickformat=".0%")
+    
     return fig
  
 # ─────────────────────────────────────────────────────────────
